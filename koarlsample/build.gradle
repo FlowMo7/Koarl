@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "dev.moetz.koarl.sample"
+        minSdkVersion 14    //constraintLayout is minSdk 14
+        targetSdkVersion libraryTargetSdkVersion
+        versionCode libraryVersionCode
+        versionName libraryVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    signingConfigs {
+        release {
+            storeFile file("./keystore.jks")
+            storePassword "koarl-keystore-password"
+            keyAlias "sample-key"
+            keyPassword "koarl-sample-key"
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles 'proguard-rules.pro', "$rootProject.rootDir.absolutePath/koarl-android/consumer-rules.pro"
+
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            debuggable true
+//            minifyEnabled true
+//            shrinkResources true
+            proguardFiles 'proguard-rules.pro', "$rootProject.rootDir.absolutePath/koarl-android/consumer-rules.pro"
+        }
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/*'
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    implementation project(':koarl-android')
+    implementation project(':koarl-android-timber')
+
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+
+    testImplementation 'junit:junit:4.13'
+
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+}

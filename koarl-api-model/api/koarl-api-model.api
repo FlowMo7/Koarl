@@ -1,0 +1,282 @@
+public final class dev/moetz/koarl/api/model/ApiAppData {
+	public static final field Companion Ldev/moetz/koarl/api/model/ApiAppData$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Lkotlinx/serialization/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()J
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;)Ldev/moetz/koarl/api/model/ApiAppData;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/api/model/ApiAppData;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;ILjava/lang/Object;)Ldev/moetz/koarl/api/model/ApiAppData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAppName ()Ljava/lang/String;
+	public final fun getAppVersionCode ()J
+	public final fun getAppVersionName ()Ljava/lang/String;
+	public final fun getPackageName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldev/moetz/koarl/api/model/ApiAppData;Lkotlinx/serialization/CompositeEncoder;Lkotlinx/serialization/SerialDescriptor;)V
+}
+
+public final class dev/moetz/koarl/api/model/ApiAppData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/model/ApiAppData$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Ldev/moetz/koarl/api/model/ApiAppData;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public fun patch (Lkotlinx/serialization/Decoder;Ldev/moetz/koarl/api/model/ApiAppData;)Ldev/moetz/koarl/api/model/ApiAppData;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun serialize (Lkotlinx/serialization/Encoder;Ldev/moetz/koarl/api/model/ApiAppData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+}
+
+public final class dev/moetz/koarl/api/model/ApiAppData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/moetz/koarl/api/model/ApiDeviceData {
+	public static final field Companion Ldev/moetz/koarl/api/model/ApiDeviceData$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlinx/serialization/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()I
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/api/model/ApiDeviceData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Object;)Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBrand ()Ljava/lang/String;
+	public final fun getBuildId ()Ljava/lang/String;
+	public final fun getDeviceName ()Ljava/lang/String;
+	public final fun getManufacturer ()Ljava/lang/String;
+	public final fun getModel ()Ljava/lang/String;
+	public final fun getOperationSystemVersion ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldev/moetz/koarl/api/model/ApiDeviceData;Lkotlinx/serialization/CompositeEncoder;Lkotlinx/serialization/SerialDescriptor;)V
+}
+
+public final class dev/moetz/koarl/api/model/ApiDeviceData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/model/ApiDeviceData$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public fun patch (Lkotlinx/serialization/Decoder;Ldev/moetz/koarl/api/model/ApiDeviceData;)Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun serialize (Lkotlinx/serialization/Encoder;Ldev/moetz/koarl/api/model/ApiDeviceData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+}
+
+public final class dev/moetz/koarl/api/model/ApiDeviceData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/moetz/koarl/api/model/ApiDeviceState {
+	public static final field Companion Ldev/moetz/koarl/api/model/ApiDeviceState$Companion;
+	public synthetic fun <init> (IJJLdev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;Lkotlinx/serialization/SerializationConstructorMarker;)V
+	public fun <init> (JJLdev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;)V
+	public final fun component1 ()J
+	public final fun component2 ()J
+	public final fun component3 ()Ldev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;
+	public final fun copy (JJLdev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;)Ldev/moetz/koarl/api/model/ApiDeviceState;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/api/model/ApiDeviceState;JJLdev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;ILjava/lang/Object;)Ldev/moetz/koarl/api/model/ApiDeviceState;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFreeMemory ()J
+	public final fun getOrientation ()Ldev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;
+	public final fun getTotalMemory ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldev/moetz/koarl/api/model/ApiDeviceState;Lkotlinx/serialization/CompositeEncoder;Lkotlinx/serialization/SerialDescriptor;)V
+}
+
+public final class dev/moetz/koarl/api/model/ApiDeviceState$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/model/ApiDeviceState$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Ldev/moetz/koarl/api/model/ApiDeviceState;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public fun patch (Lkotlinx/serialization/Decoder;Ldev/moetz/koarl/api/model/ApiDeviceState;)Ldev/moetz/koarl/api/model/ApiDeviceState;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun serialize (Lkotlinx/serialization/Encoder;Ldev/moetz/koarl/api/model/ApiDeviceState;)V
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+}
+
+public final class dev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation : java/lang/Enum {
+	public static final field Landscape Ldev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;
+	public static final field Portrait Ldev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;
+	public static final field Undefined Ldev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;
+	public static fun valueOf (Ljava/lang/String;)Ldev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;
+	public static fun values ()[Ldev/moetz/koarl/api/model/ApiDeviceState$ApiDeviceOrientation;
+}
+
+public final class dev/moetz/koarl/api/model/ApiDeviceState$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody {
+	public static final field Companion Ldev/moetz/koarl/api/model/CrashUploadRequestBody$Companion;
+	public synthetic fun <init> (ILdev/moetz/koarl/api/model/ApiDeviceData;Ldev/moetz/koarl/api/model/ApiAppData;Ljava/util/List;Lkotlinx/serialization/SerializationConstructorMarker;)V
+	public fun <init> (Ldev/moetz/koarl/api/model/ApiDeviceData;Ldev/moetz/koarl/api/model/ApiAppData;Ljava/util/List;)V
+	public final fun component1 ()Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public final fun component2 ()Ldev/moetz/koarl/api/model/ApiAppData;
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy (Ldev/moetz/koarl/api/model/ApiDeviceData;Ldev/moetz/koarl/api/model/ApiAppData;Ljava/util/List;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/api/model/CrashUploadRequestBody;Ldev/moetz/koarl/api/model/ApiDeviceData;Ldev/moetz/koarl/api/model/ApiAppData;Ljava/util/List;ILjava/lang/Object;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAppData ()Ldev/moetz/koarl/api/model/ApiAppData;
+	public final fun getCrashes ()Ljava/util/List;
+	public final fun getDeviceData ()Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldev/moetz/koarl/api/model/CrashUploadRequestBody;Lkotlinx/serialization/CompositeEncoder;Lkotlinx/serialization/SerialDescriptor;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/model/CrashUploadRequestBody$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public fun patch (Lkotlinx/serialization/Decoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun serialize (Lkotlinx/serialization/Encoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody;)V
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash {
+	public static final field Companion Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$Companion;
+	public synthetic fun <init> (ILjava/lang/String;ZZLorg/joda/time/DateTime;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;Ldev/moetz/koarl/api/model/ApiDeviceState;Lkotlinx/serialization/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;ZZLorg/joda/time/DateTime;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;Ldev/moetz/koarl/api/model/ApiDeviceState;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Z
+	public final fun component3 ()Z
+	public final fun component4 ()Lorg/joda/time/DateTime;
+	public final fun component5 ()Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public final fun component6 ()Ldev/moetz/koarl/api/model/ApiDeviceState;
+	public final fun copy (Ljava/lang/String;ZZLorg/joda/time/DateTime;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;Ldev/moetz/koarl/api/model/ApiDeviceState;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;Ljava/lang/String;ZZLorg/joda/time/DateTime;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;Ldev/moetz/koarl/api/model/ApiDeviceState;ILjava/lang/Object;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDateTime ()Lorg/joda/time/DateTime;
+	public final fun getDeviceState ()Ldev/moetz/koarl/api/model/ApiDeviceState;
+	public final fun getInForeground ()Z
+	public final fun getThrowable ()Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public final fun getUuid ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isFatal ()Z
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;Lkotlinx/serialization/CompositeEncoder;Lkotlinx/serialization/SerialDescriptor;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public fun patch (Lkotlinx/serialization/Decoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun serialize (Lkotlinx/serialization/Encoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;)V
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement {
+	public static final field Companion Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;ZLkotlinx/serialization/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Z)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Z)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getClassName ()Ljava/lang/String;
+	public final fun getFileName ()Ljava/lang/String;
+	public final fun getLineNumber ()Ljava/lang/Integer;
+	public final fun getMethodName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isNativeMethod ()Z
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;Lkotlinx/serialization/CompositeEncoder;Lkotlinx/serialization/SerialDescriptor;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public fun patch (Lkotlinx/serialization/Decoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun serialize (Lkotlinx/serialization/Encoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement;)V
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiStackTraceElement$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable {
+	public static final field Companion Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;Lkotlinx/serialization/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/util/List;
+	public final fun component5 ()Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;ILjava/lang/Object;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCause ()Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public final fun getLocalizedMessage ()Ljava/lang/String;
+	public final fun getMessage ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getStackTrace ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;Lkotlinx/serialization/CompositeEncoder;Lkotlinx/serialization/SerialDescriptor;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable$$serializer;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public fun patch (Lkotlinx/serialization/Decoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;)Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun serialize (Lkotlinx/serialization/Encoder;Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable;)V
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$ApiThrowable$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/moetz/koarl/api/model/CrashUploadRequestBody$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/moetz/koarl/api/serializer/DateTimeSerializer : kotlinx/serialization/KSerializer {
+	public static final field INSTANCE Ldev/moetz/koarl/api/serializer/DateTimeSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/Decoder;)Ljava/lang/Object;
+	public fun deserialize (Lkotlinx/serialization/Decoder;)Lorg/joda/time/DateTime;
+	public final fun deserializeFromString (Ljava/lang/String;)Lorg/joda/time/DateTime;
+	public fun getDescriptor ()Lkotlinx/serialization/SerialDescriptor;
+	public final fun getFormatString ()Ljava/lang/String;
+	public synthetic fun patch (Lkotlinx/serialization/Decoder;Ljava/lang/Object;)Ljava/lang/Object;
+	public fun patch (Lkotlinx/serialization/Decoder;Lorg/joda/time/DateTime;)Lorg/joda/time/DateTime;
+	public synthetic fun serialize (Lkotlinx/serialization/Encoder;Ljava/lang/Object;)V
+	public fun serialize (Lkotlinx/serialization/Encoder;Lorg/joda/time/DateTime;)V
+	public final fun serializeToString (Lorg/joda/time/DateTime;)Ljava/lang/String;
+}
+

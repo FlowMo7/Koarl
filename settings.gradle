@@ -1,0 +1,2 @@
+include ':koarlsample', ':koarl-android', ':koarl-android-timber', ':koarl-api-model', ':koarl-backend'
+rootProject.name='Koarl'

@@ -1,0 +1,99 @@
+apply plugin: 'maven-publish'
+
+//load global deploy properties (i.e. username & publish api key)
+Properties properties = new Properties()
+try {
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+} catch (IOException e1) {
+    println("local.properties not found.")
+
+    String filePath = System.getenv("BINTRAY_DEPLOY_CREDENTIALS")
+
+    if (filePath != null && filePath != "") {
+        println("filePath for injected local.properties found.")
+
+        try {
+            properties.load(project.rootProject.file(filePath).newDataInputStream())
+        } catch (IOException e2) {
+            println("We are also not in a (correctly set-up) CI. This can be ignored, unless you want to publish. " + e2.localizedMessage)
+        }
+    } else {
+        println("We are also not in a (correctly set-up) CI. This can be ignored, unless you want to publish. " + e1.localizedMessage)
+    }
+}
+
+
+//load module deploy properties
+try {
+    properties.load(file('deploy.properties').newDataInputStream())
+} catch (IOException e) {
+    println("deploy.properties not found.")
+
+    throw IllegalStateException(e, "deploy.properties not found. Each module that applies the publish.gradle script needs to declare a 'deploy.properties' file.")
+}
+
+
+task sourceJar(type: Jar) {
+    if(properties.isAndroidLibrary == "true") {
+        from android.sourceSets.main.java.srcDirs
+    } else {
+        from sourceSets.main.java
+    }
+    classifier "sources"
+}
+
+//publish using: ./gradlew clean :[module_name]:build :[module_name]:publish
+publishing {
+    publications {
+        tailoredArtifactory(MavenPublication) {
+            groupId groupName
+            artifactId properties.artifactId
+            version libraryVersion
+
+
+            artifact(sourceJar)
+            if(properties.isAndroidLibrary == "true") {
+                artifact("$buildDir/outputs/aar/${properties.localArtifactName}-release.aar") {
+                    builtBy tasks.getByName("assemble")
+                }
+            } else {
+                artifact("$buildDir/libs/${properties.localJarName}-${libraryVersion}.jar") {
+                    builtBy tasks.getByName("assemble")
+                }
+            }
+            pom {
+                name = properties.name
+                description = properties.description
+                url = properties.url
+
+                organization {
+                    url = "https://moetz.dev"
+                }
+            }
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+
+                //Iterate over the compile dependencies (we don't want the test ones), adding a <dependency> node for each
+                (configurations.implementation.allDependencies + configurations.api.allDependencies).each {
+                    if (it.group != null) {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url properties.getProperty("maven.repository.url")
+            credentials {
+                username properties.getProperty("maven.repository.publish.user")
+                password properties.getProperty("maven.repository.publish.password")
+            }
+        }
+    }
+}
+
+publish.dependsOn(build)

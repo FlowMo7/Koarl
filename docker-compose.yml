@@ -1,0 +1,80 @@
+version: '3'
+services:
+  backend:
+    image: "koarl-docker.nexus.moetz.dev/koarl/koarl-backend:0.0.9"
+    restart: "unless-stopped"
+    networks:
+      koarl_network:
+        aliases:
+          - backend
+    depends_on:
+      - database
+    environment:
+      - database.type=mysql
+      - database.host=database
+      - database.port=3306
+      - database.database_name=DATABASE_NAME
+      - database.user=DATABASE_USER
+      - database.password=DATABASE_PASSWORD
+      - grafana.basicauth.user=GRAFANA_BASICAUTH_USER
+      - grafana.basicauth.password=GRAFANA_BASICAUTH_PASSWORD
+#      - dashboard.basicauth.user=admin
+#      - dashboard.basicauth.password=admin
+#      - swagger.basicauth.user=admin
+#      - swagger.basicauth.password=admin
+      - swagger.enable=true
+
+  database:
+    image: 'mysql:8'
+    restart: "unless-stopped"
+    environment:
+      - MYSQL_DATABASE=DATABASE_NAME
+      - MYSQL_USER=DATABASE_USER
+      - MYSQL_PASSWORD=DATABASE_PASSWORD
+      - MYSQL_ROOT_PASSWORD=MYSQL_ROOT_PASSWORD
+    networks:
+      koarl_network:
+        aliases:
+          - database
+    volumes:
+      - ./database:/var/lib/mysql:rw
+  nginx:
+    container_name: "koarl"
+    hostname: "koarl"
+    image: "nginx:stable"
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - koarl_network
+    depends_on:
+      - backend
+    volumes:
+      # NGINX configuration file (read only)
+      - ./reverse-proxy/config:/etc/nginx/conf.d/:ro
+      # LOG file locations (readwrite)
+      - ./reverse-proxy/logs:/logs:rw
+  grafana:
+    image: 'grafana/grafana:latest'
+    container_name: "koarl-grafana"
+    hostname: "koarl-grafana"
+    restart: always
+    networks:
+      - koarl_network
+    depends_on:
+      - backend
+    volumes:
+      - grafana:/var/lib/grafana:rw
+    environment:
+      - GF_SERVER_DOMAIN=koarl.moetz.dev
+      - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:%(http_port)s/grafana/
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
+      - GF_SECURITY_ADMIN_PASSWORD=secret123
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource
+
+volumes:
+  grafana:
+
+networks:
+  koarl_network:
+    driver: bridge

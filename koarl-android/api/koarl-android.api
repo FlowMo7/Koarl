@@ -1,0 +1,146 @@
+public final class dev/moetz/koarl/android/BuildConfig {
+	public static final field BUILD_TYPE Ljava/lang/String;
+	public static final field DEBUG Z
+	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
+	public static final field VERSION_CODE I
+	public static final field VERSION_NAME Ljava/lang/String;
+	public fun <init> ()V
+}
+
+public final class dev/moetz/koarl/android/Koarl {
+	public static final field INSTANCE Ldev/moetz/koarl/android/Koarl;
+	public final fun init (Landroid/content/Context;Lkotlin/jvm/functions/Function1;)V
+	public final fun logException (Ljava/lang/Throwable;)V
+	public final fun reportingEnabled (Z)V
+}
+
+public final class dev/moetz/koarl/android/UtilKt {
+	public static final field libraryVersionName Ljava/lang/String;
+	public static final fun launchInProcessLifecycleScope (Lkotlin/jvm/functions/Function2;)V
+}
+
+public final class dev/moetz/koarl/android/data/local/CrashDao_Impl {
+	public fun <init> (Landroidx/room/RoomDatabase;)V
+	public fun deleteCrashes (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getCrashes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun insert (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class dev/moetz/koarl/android/data/local/LocalRepo {
+	public abstract fun addCrash (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCrashes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun removeCrashes (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class dev/moetz/koarl/android/data/local/LocalRoomDatabase_Impl {
+	public fun <init> ()V
+	public fun clearAllTables ()V
+	public fun crashDao ()Ldev/moetz/koarl/android/data/local/CrashDao;
+}
+
+public final class dev/moetz/koarl/android/data/local/RoomLocalRepo : dev/moetz/koarl/android/data/local/LocalRepo {
+	public fun <init> (Landroid/content/Context;)V
+	public fun addCrash (Ldev/moetz/koarl/api/model/CrashUploadRequestBody$ApiCrash;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getCrashes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun removeCrashes (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class dev/moetz/koarl/android/data/remote/CrashUploader {
+	public abstract fun uploadCrashes (Ljava/lang/String;Ldev/moetz/koarl/api/model/ApiDeviceData;Ldev/moetz/koarl/api/model/ApiAppData;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class dev/moetz/koarl/android/data/remote/OkHttpCrashUploader : dev/moetz/koarl/android/data/remote/CrashUploader {
+	public static final field Companion Ldev/moetz/koarl/android/data/remote/OkHttpCrashUploader$Companion;
+	public fun <init> (Lkotlinx/serialization/json/Json;Lokhttp3/OkHttpClient;)V
+	public fun uploadCrashes (Ljava/lang/String;Ldev/moetz/koarl/api/model/ApiDeviceData;Ldev/moetz/koarl/api/model/ApiAppData;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class dev/moetz/koarl/android/data/remote/OkHttpCrashUploader$Companion {
+}
+
+public final class dev/moetz/koarl/android/device/AndroidDeviceStateRetriever : dev/moetz/koarl/android/device/DeviceStateRetriever {
+	public fun <init> (Landroid/content/Context;)V
+	public fun getDeviceData ()Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public fun getDeviceState ()Ldev/moetz/koarl/api/model/ApiDeviceState;
+}
+
+public final class dev/moetz/koarl/android/device/AndroidDeviceStateRetriever$MemoryDetails {
+	public fun <init> (JJ)V
+	public final fun component1 ()J
+	public final fun component2 ()J
+	public final fun copy (JJ)Ldev/moetz/koarl/android/device/AndroidDeviceStateRetriever$MemoryDetails;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/android/device/AndroidDeviceStateRetriever$MemoryDetails;JJILjava/lang/Object;)Ldev/moetz/koarl/android/device/AndroidDeviceStateRetriever$MemoryDetails;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFree ()J
+	public final fun getTotal ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class dev/moetz/koarl/android/device/DeviceStateRetriever {
+	public abstract fun getDeviceData ()Ldev/moetz/koarl/api/model/ApiDeviceData;
+	public abstract fun getDeviceState ()Ldev/moetz/koarl/api/model/ApiDeviceState;
+}
+
+public final class dev/moetz/koarl/android/dsl/KoarlConfiguration {
+	public final fun copy (Ljava/lang/String;Ldev/moetz/koarl/android/data/local/LocalRepo;Ldev/moetz/koarl/android/data/remote/CrashUploader;Ldev/moetz/koarl/android/device/DeviceStateRetriever;Ldev/moetz/koarl/api/model/ApiAppData;Ldev/moetz/koarl/android/dsl/PrivacySettings;Ldev/moetz/koarl/android/dsl/TimingSettings;)Ldev/moetz/koarl/android/dsl/KoarlConfiguration;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/android/dsl/KoarlConfiguration;Ljava/lang/String;Ldev/moetz/koarl/android/data/local/LocalRepo;Ldev/moetz/koarl/android/data/remote/CrashUploader;Ldev/moetz/koarl/android/device/DeviceStateRetriever;Ldev/moetz/koarl/api/model/ApiAppData;Ldev/moetz/koarl/android/dsl/PrivacySettings;Ldev/moetz/koarl/android/dsl/TimingSettings;ILjava/lang/Object;)Ldev/moetz/koarl/android/dsl/KoarlConfiguration;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/moetz/koarl/android/dsl/KoarlConfiguration$Builder {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ldev/moetz/koarl/android/data/local/LocalRepo;Ldev/moetz/koarl/android/data/remote/CrashUploader;Lokhttp3/CertificatePinner;Ldev/moetz/koarl/android/device/DeviceStateRetriever;Ljava/lang/Boolean;Lkotlin/Pair;Ljava/lang/String;Ldev/moetz/koarl/android/dsl/PrivacySettings$Builder;Ldev/moetz/koarl/android/dsl/TimingSettings$Builder;)V
+	public final fun appName (Ljava/lang/String;)V
+	public final fun baseUrl (Ljava/lang/String;)V
+	public final fun certificatePinner (Lokhttp3/CertificatePinner;)V
+	public final fun customCrashUploader (Ldev/moetz/koarl/android/data/remote/CrashUploader;)V
+	public final fun customLocalRepo (Ldev/moetz/koarl/android/data/local/LocalRepo;)V
+	public final fun debugLogsEnabled (Z)V
+	public final fun deviceStateRetriever (Ldev/moetz/koarl/android/device/DeviceStateRetriever;)V
+	public final fun privacySettings (Lkotlin/jvm/functions/Function1;)V
+	public final fun timingSettings (Lkotlin/jvm/functions/Function1;)V
+	public final fun version (JLjava/lang/String;)V
+}
+
+public final class dev/moetz/koarl/android/dsl/KoarlConfigurationBuilder {
+	public static final field INSTANCE Ldev/moetz/koarl/android/dsl/KoarlConfigurationBuilder;
+	public final fun build (Landroid/content/Context;Ldev/moetz/koarl/android/dsl/KoarlConfiguration$Builder;)Ldev/moetz/koarl/android/dsl/KoarlConfiguration;
+}
+
+public final class dev/moetz/koarl/android/dsl/PrivacySettings {
+	public fun <init> (ZZ)V
+	public final fun component1 ()Z
+	public final fun component2 ()Z
+	public final fun copy (ZZ)Ldev/moetz/koarl/android/dsl/PrivacySettings;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/android/dsl/PrivacySettings;ZZILjava/lang/Object;)Ldev/moetz/koarl/android/dsl/PrivacySettings;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEnableReporting ()Z
+	public final fun getSendDeviceData ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/moetz/koarl/android/dsl/PrivacySettings$Builder {
+	public fun <init> ()V
+	public final fun enableReporting (Z)V
+	public final fun sendDeviceData (Z)V
+}
+
+public final class dev/moetz/koarl/android/dsl/TimingSettings {
+	public fun <init> (JJ)V
+	public final fun copy (JJ)Ldev/moetz/koarl/android/dsl/TimingSettings;
+	public static synthetic fun copy$default (Ldev/moetz/koarl/android/dsl/TimingSettings;JJILjava/lang/Object;)Ldev/moetz/koarl/android/dsl/TimingSettings;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/moetz/koarl/android/dsl/TimingSettings$Builder {
+	public fun <init> ()V
+	public final fun delayAfterApplicationStartToUpload (JLjava/util/concurrent/TimeUnit;)V
+	public final fun delayToRetryUpload (JLjava/util/concurrent/TimeUnit;)V
+}
+
