@@ -17,7 +17,7 @@ allprojects {
     repositories {
         ...
         maven {
-            url 'https://maven.moetz.dev/artifactory/koarl/'
+            url 'https://nexus.moetz.dev/repository/koarl/'
         }
     }
 }
