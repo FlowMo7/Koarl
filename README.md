@@ -46,7 +46,7 @@ Furthermore, by using `Koarl.logException()`, a non-fatal error can be logged.
 
 The server application is provided as docker image / docker-compose configuration (which includes a MySQL database as well as an NGINX reverse proxy as well).
 
-Copy the given [docker-compose.yml] file, replace the passwords with customly generated passwords, and start up the container by using:
+Copy the given [docker-compose.yml](docker-compose.yml) file, replace the passwords with customly generated passwords, and start up the container by using:
 ```shell script
 docker-compose up -d
 ```
